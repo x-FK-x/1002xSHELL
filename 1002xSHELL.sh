@@ -58,7 +58,7 @@ while true; do
   case "$cmd" in
     exit) exit 0 ;;
     cls) clear ;;
-    ver) echo "XDOS Shell v1.0" ;;
+    ver) echo "1002xShell v0.2" ;;
     pause) read -rp "Press any key to continue..." ;;
     cd) cd "${args[0]:-$HOME}" || echo "Directory not found" ;;
     dir) ls -alh "${args[0]:-.}" ;;

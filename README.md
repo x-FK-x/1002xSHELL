@@ -1,7 +1,7 @@
 Welcome to the 1002xSHELL
 MS-DOS like Shell for Debian
 
-V0.1 include:
+V0.2 include:
 
 - Filesystem Commands
 - Local Firefox with Xinit

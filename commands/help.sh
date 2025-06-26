@@ -10,7 +10,7 @@ fi
 
 # Alle Befehle auflisten
 if [ $# -eq 0 ]; then
-  echo "XDOS Shell Help"
+  echo "1002xShell Help"
   echo "==============="
   while IFS=: read -r aliases script desc usage; do
     # aliases: copy/del/xyz

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "XDOSshell loaded"
+echo "1002XSHELL loaded"
 BASE_DIR="$(dirname "$(realpath "$0")")"
 LIST_FILE="$BASE_DIR/list.txt"
 COMMANDS_DIR="$BASE_DIR/commands"

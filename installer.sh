@@ -21,8 +21,8 @@ chmod 777 "$TARGET_DIR/Cx"
 
 # Alias in /etc/bash.bashrc eintragen (wenn nicht schon vorhanden)
 if ! grep -q "alias 1002xSHELL=" /etc/bash.bashrc; then
-  echo "alias 1002xSHELL='$TARGET_DIR/xdos.sh'" >> /etc/bash.bashrc
-  echo "alias cmd='$TARGET_DIR/xdos.sh'" >> /etc/bash.bashrc
+  echo "alias 1002xSHELL='$TARGET_DIR/1002xSHELL.sh'" >> /etc/bash.bashrc
+  echo "alias cmd='$TARGET_DIR/1002xSHELL.sh'" >> /etc/bash.bashrc
   echo "✅ Added aliases 1002xSHELL and cmd to /etc/bash.bashrc"
   source /etc/bash.bashrc
 fi

@@ -10,7 +10,7 @@ COMMANDS_DIR="$BASE_DIR/commands"
 if [[ $EUID -ne 0 && -d "/home/$USER" ]]; then
   VIRTUAL_C="/home/$USER/.Cx"
 else
-  VIRTUAL_C="/XDOSshell/Cx"
+  VIRTUAL_C="/1002XSHELL/Cx"
 fi
 
 mkdir -p "$VIRTUAL_C"

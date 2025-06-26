@@ -2,6 +2,7 @@
 
 clear
 echo "1002XSHELL loaded"
+
 BASE_DIR="$(dirname "$(realpath "$0")")"
 LIST_FILE="$BASE_DIR/list.txt"
 COMMANDS_DIR="$BASE_DIR/commands"
@@ -21,16 +22,32 @@ cd "$VIRTUAL_C" || exit
 
 # Hauptloop
 while true; do
-  prompt="C:\\>"
-  [[ "$PWD" == "/" ]] && prompt="LINUX:\\>"
+  cwd=$(pwd)
 
-  read -e -a input -p "$prompt "
+  if [[ "$cwd" == "$VIRTUAL_C"* ]]; then
+    # Pfad relativ zu VIRTUAL_C
+    rel_path="${cwd#$VIRTUAL_C}"
+    # Wenn root vom virtuellen Laufwerk, rel_path leer = \
+    if [[ -z "$rel_path" || "$rel_path" == "/" ]]; then
+      prompt="C:\\> "
+    else
+      # Slashes in Backslashes ändern, voranstellen
+      rel_path_win="C:\\${rel_path#/}"
+      rel_path_win="${rel_path_win//\//\\}"
+      prompt="${rel_path_win}> "
+    fi
+  else
+    folder_name=$(basename "$cwd")
+    prompt="LINUX:\\${folder_name}> "
+  fi
+
+  read -e -a input -p "$prompt"
   [[ -z "${input[0]}" ]] && continue
 
   cmd="${input[0],,}"
   args=("${input[@]:1}")
 
-  # ? Autovervollständigung
+  # Autovervollständigung bei ?
   if [[ "$cmd" == *"?" ]]; then
     guess="${cmd%\?}"
     "$COMMANDS_DIR/autofill.sh" "$guess"
@@ -79,4 +96,3 @@ while true; do
       ;;
   esac
 done
-

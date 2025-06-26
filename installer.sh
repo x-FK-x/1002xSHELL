@@ -32,7 +32,7 @@ cat > /usr/share/applications/1002xSHELL.desktop <<EOF
 [Desktop Entry]
 Name=1002xSHELL
 Comment=DOS-like shell for Debian
-Exec=$TARGET_DIR/xdos.sh
+Exec=$TARGET_DIR/1002xSHELL.sh
 Icon=utilities-terminal
 Terminal=true
 Type=Application

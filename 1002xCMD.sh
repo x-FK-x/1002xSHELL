@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "1002XSHELL loaded"
+echo "1002XCMD loaded"
 
 BASE_DIR="$(dirname "$(realpath "$0")")"
 LIST_FILE="$BASE_DIR/list.txt"
@@ -11,7 +11,7 @@ COMMANDS_DIR="$BASE_DIR/commands"
 if [[ $EUID -ne 0 && -d "/home/$USER" ]]; then
   VIRTUAL_C="/home/$USER/.Cx"
 else
-  VIRTUAL_C="/1002xSHELL/Cx"
+  VIRTUAL_C="/1002xCMD/Cx"
 fi
 
 mkdir -p "$VIRTUAL_C"
@@ -58,7 +58,7 @@ while true; do
   case "$cmd" in
     exit) exit 0 ;;
     cls) clear ;;
-    ver) echo "1002xShell v0.2" ;;
+    ver) echo "1002xCMD v0.2" ;;
     pause) read -rp "Press any key to continue..." ;;
     cd) cd "${args[0]:-$HOME}" || echo "Directory not found" ;;
     dir) ls -alh "${args[0]:-.}" ;;

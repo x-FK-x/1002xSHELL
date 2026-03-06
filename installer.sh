@@ -66,4 +66,6 @@ rm -f "$ZIP_FILE"
 
 echo "[✓] 1002xSHELL V${RELEASE_VERSION} installed successfully"
 
+sed -i 's/\r$//' /etc/1002xSHELL/v2.sh
+
 # DODOS - DownTown1002xCollection of Debian OS

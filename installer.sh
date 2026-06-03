@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # === Release Version (ANPASSEN) ===
-RELEASE_VERSION="3"          # 0 … 999
+RELEASE_VERSION="4"          # 0 … 999
 SHELL_SCRIPT="v${RELEASE_VERSION}.sh"
 
 # === URLs ===
@@ -66,6 +66,6 @@ rm -f "$ZIP_FILE"
 
 echo "[✓] 1002xSHELL V${RELEASE_VERSION} installed successfully"
 
-sed -i 's/\r$//' /etc/1002xSHELL/v3.sh
+sed -i 's/\r$//' /etc/1002xSHELL/v4.sh
 
 # DODOS - DownTown1002xCollection of Debian OS

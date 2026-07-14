@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # === Release Version (ANPASSEN) ===
-RELEASE_VERSION="4"          # 0 … 999
+RELEASE_VERSION="5"          # 0 … 999
 SHELL_SCRIPT="v${RELEASE_VERSION}.sh"
 
 # === URLs ===
